@@ -5,7 +5,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/HEKET313/health-check"
+            "url": "https://github.com/kuznetsovsite/math"
         }
     ],
     "license": "proprietary",
