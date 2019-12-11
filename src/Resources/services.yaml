@@ -1,0 +1,10 @@
+#serivces:
+#  _instanceof:
+#    Sk\MathBundle\Interfaces\MathLibInterface:
+#      tags:
+#        - !php/const Sk\MathBundle\Interfaces\MathLibInterface::TAG
+
+
+services:
+    Sk\MathBundle\Controller\MathController:
+        autoconfigure: true
