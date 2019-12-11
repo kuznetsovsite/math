@@ -1,6 +1,6 @@
 {
     "type": "symfony-bundle",
-    "name": "sk/math",
+    "name": "kuznetsovsite/math",
     "description": "Math plugin",
     "license": "proprietary",
     "require": {
