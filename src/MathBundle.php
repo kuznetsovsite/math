@@ -1,6 +1,6 @@
 <?php
 
-namespace Sk\MathBundle1;
+namespace Sk\MathBundle;
 
 
 use Sk\MathBundle\DependencyInjection\Compiler\MathPath;
