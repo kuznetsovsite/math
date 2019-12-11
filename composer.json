@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sk\\Math\\": "src/"
+            "Sk\\MathBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sk\\Math\\Tests\\": "tests/"
+            "Sk\\MathBundle\\Tests\\": "tests/"
         }
     }
 }
