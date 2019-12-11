@@ -5,7 +5,6 @@ namespace Sk\MathBundle\Controller;
 
 
 use Sk\MathBundle\Interfaces\MathLibInterface;
-use Sk\MathBundle\Interfaces\ProviderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
