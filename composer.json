@@ -2,12 +2,6 @@
     "type": "symfony-bundle",
     "name": "sk/math",
     "description": "Math plugin",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/kuznetsovsite/math"
-        }
-    ],
     "license": "proprietary",
     "require": {
         "php": "^7.1.0",
