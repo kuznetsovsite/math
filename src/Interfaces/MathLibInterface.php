@@ -48,4 +48,6 @@ interface MathLibInterface
      * @return null|ProviderInterface
      */
     public function getCurrentProvider(): ?ProviderInterface;
+
+    public function setProviderByName(string $providerName): ?ProviderInterface;
 }

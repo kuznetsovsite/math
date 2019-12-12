@@ -81,6 +81,15 @@ class MathService implements MathLibInterface
         return $provider;
     }
 
+    public function setProviderByName(string $providerName): ?ProviderInterface
+    {
+        $provider = $this->getProviderByName($providerName);
+        if (empty($provider)) {
+            return null;
+        }
+        return $this->setProvider($provider);
+    }
+
     /**
      * Get current provider if set
      * @return null|ProviderInterface

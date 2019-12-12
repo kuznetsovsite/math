@@ -1,3 +1,4 @@
 services:
     Sk\MathBundle\Controller\MathController:
         autoconfigure: true
+    Sk\MathBundle\Interfaces\MathLibInterface: 'Sk\MathBundle\Service\MathService'
