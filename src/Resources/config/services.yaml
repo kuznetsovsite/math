@@ -3,7 +3,7 @@ services:
         autoconfigure: true
 
     math_service:
-        class:    'Sk\MathBundle\Service\MathService'
+        class:    '@SkMathBundle\Service\MathService'
         autowire: true
 
-    Sk\MathBundle\Interfaces\MathLibInterface: '@math_service'
+    SkMathBundle\Interfaces\MathLibInterface: '@math_service'
