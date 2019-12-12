@@ -8,8 +8,10 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 /**
  * sk_math:
  *      providers:
- *          - 'serviceProvider1'
- *          - 'serviceProvider2'
+ *          std_math: 'Sk\MathBundle\Entity\StandartProvider'
+ *          string_calc: 'Sk\MathBundle\Entity\StringCalcProvider'
+ *
+ *      default: std_math
  *
  * Class Configuration
  * @package Sk\MathBundle\DependencyInjection
@@ -24,7 +26,17 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('providers')
-                    ->scalarPrototype()->end()
+                    ->children()
+                        ->scalarNode('std_math')
+                            ->defaultValue('Sk\MathBundle\Entity\StandartProvider')
+                        ->end()
+                        ->scalarNode('string_calc')
+                            ->defaultValue('Sk\MathBundle\Entity\StringCalcProvider')
+                        ->end()
+                    ->end()
+                ->end()
+                ->scalarNode('default')
+                    ->defaultValue('std_math')
                 ->end()
             ->end()
         ;

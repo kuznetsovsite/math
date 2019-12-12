@@ -25,7 +25,7 @@ interface MathLibInterface
      * @param string $expression
      * @return mixed
      */
-    public function getResult(string $expression);
+    public function getResult(string $expression): ResultInterface;
 
     /**
      * Get provider if exists by name
@@ -38,10 +38,10 @@ interface MathLibInterface
     /**
      * Set current provider
      *
-     * @param string $providerName
+     * @param ProviderInterface $provider
      * @return null|ProviderInterface
      */
-    public function setProvider(string $providerName): ?ProviderInterface;
+    public function setProvider(ProviderInterface $provider): ?ProviderInterface;
 
     /**
      * Get current provider if set

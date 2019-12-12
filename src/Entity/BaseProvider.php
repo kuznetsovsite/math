@@ -7,21 +7,6 @@ class BaseProvider implements ProviderInterface {
 
     protected $name;
 
-    protected $className;
-
-    protected $mathLibObj;
-
-    public function __construct(string $name, string $className)
-    {
-        $this->name = $name;
-        $this->className = $className;
-    }
-
-    public function init(array $config = [])
-    {
-        $this->mathLibObj = new $this->className($config);
-    }
-
     public function getName(): string
     {
         return $this->name;
