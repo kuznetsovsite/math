@@ -21,6 +21,8 @@ Extention Symfony
 - Имеет возможность расширения (например, если в какой-то момент будет решено считать через wolfram alpha).
     Возможно добавить через 
     MathLibInterface::addProvider(ProviderInterface $provider)
+    Как пример, добавлена заисимость - сторонняя библиотека 
+    <pre><code>hrisKonnertz\StringCalc\StringCalc()</pre></code>
     
 - Корректную инициацию для композера.
     composer require kuznetsovsite/math
