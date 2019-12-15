@@ -2,7 +2,7 @@
 
 namespace Sk\MathBundle\DependencyInjection\Compiler;
 
-use Sk\MathBundle\Controller\MathController;
+use Sk\MathBundle\Controller\MController;
 use Sk\MathBundle\Interfaces\MathLibInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,13 +12,6 @@ class MathPath implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if (!$container->has(MathController::class)) {
-            return;
-        }
 
-        $controller = $container->findDefinition(MathController::class);
-        foreach (array_keys($container->findTaggedServiceIds(MathLibInterface::TAG)) as $serviceId) {
-            $controller->addMethodCall('setMathService', [new Reference($serviceId)]);
-        }
     }
 }

@@ -18,6 +18,8 @@ Extention Symfony
 - Выдает на выходе результат или ошибку, если что-то пошло не так.
     ResultInterface
     
+    {"name":"std_math","result":{"expression":"1+ 7 *4 -(5 2\/7)","additional_info":60.57142857142857}}
+    
 - Имеет возможность расширения (например, если в какой-то момент будет решено считать через wolfram alpha).
     Возможно добавить через 
     MathLibInterface::addProvider(ProviderInterface $provider)

@@ -20,16 +20,26 @@ class MathExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yaml');
 
-//        if (!empty($config['default'])) {
-//            $definitionMathService = $container->getDefinition('Sk\MathBundle\Interfaces\MathLibInterface');
-//            $definitionMathService->addMethodCall('setProviderByName', [$config['default']]);
-//        }
+        $container->autowire('Sk\MathBundle\Interfaces\MathLibInterface', 'Sk\MathBundle\Service\MathService');
+        $definitionMathService = $container->getDefinition('Sk\MathBundle\Interfaces\MathLibInterface');
+
+        foreach ($config['providers'] as $key => $providerClass) {
+            $container->autowire($providerClass, $providerClass);
+            $definitionService = $container->getDefinition($providerClass);
+            $definitionMathService->addMethodCall('addProvider', [$definitionService]);
+        }
+
+        if (!empty($config['default'])) {
+            $definitionMathService->addMethodCall('setProviderByName', [$config['default']]);
+        }
 
         // установка определения в контейнер
 
         $this->addAnnotatedClassesToCompile([
-            '**Bundle\\Controller\\',
-            '**Bundle\\Service\\',
+            'Sk\\MathBundle\\Controller\\',
+            'Sk\\MathBundle\\Service\\',
+//            '**Bundle\\Controller\\',
+//            '**Bundle\\Service\\',
         ]);
     }
 }

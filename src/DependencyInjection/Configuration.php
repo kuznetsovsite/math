@@ -22,23 +22,29 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('sk_math');
 
-        $rootNode = $treeBuilder->getRootNode();
-        $rootNode
+//        $rootNode = $treeBuilder->getRootNode()->;
+        $treeBuilder->getRootNode()
             ->children()
+                ->scalarNode('default')
+                    ->defaultValue('std_math')
+                ->end()// end default
+
                 ->arrayNode('providers')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('std_math')
+                            ->isRequired()
+                            ->cannotBeEmpty()
                             ->defaultValue('Sk\MathBundle\Entity\StandartProvider')
                         ->end()
                         ->scalarNode('string_calc')
+                            ->isRequired()
+                            ->cannotBeEmpty()
                             ->defaultValue('Sk\MathBundle\Entity\StringCalcProvider')
                         ->end()
                     ->end()
-                ->end()
-                ->scalarNode('default')
-                    ->defaultValue('std_math')
-                ->end()
-            ->end()
+                ->end() // end providers
+            ->end() // end children
         ;
 
         return $treeBuilder;
